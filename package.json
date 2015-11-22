@@ -1,0 +1,38 @@
+{
+    "version": "1.0.0",
+    "name": "com-phonegap-bossbolo-plugin-mediacapture",
+    "description": "布络多媒体功能插件.”,
+    "cordova": {
+        "id": "com-phonegap-bossbolo-plugin-mediacapture",
+        "platforms": [
+            "android"
+        ]
+    },
+    "keywords": [
+        "cordova",
+        "phonegap",
+        "bossbolo",
+        "BoloPlugin",
+        "boloPlugin",
+        "boloplugin",
+        "mediacapture",
+	"media",
+	"capture",
+        "push",
+        "ecosystem:cordova",
+        "cordova-android",
+        "cordova-ios"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ulee77/com-phonegap-bossbolo-plugin-mediacapture.git"
+    },
+    "engines": [
+        {
+            "name": "cordova",
+            "version": ">=3.0.0"
+        }
+    ],
+    "author": "Apache Software Foundation",
+    "license": "Apache 2.0"
+}

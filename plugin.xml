@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:rim="http://www.blackberry.com/ns/widgets"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="com-phonegap-bossbolo-plugin-mediacapture"
+        version="1.1.0">
+    <name>BoloMediaCapture</name>
+    <description>
+		多媒体插件
+	</description>
+    <license>Apache 2.0</license>
+    <keywords>push,BoloMediaCapture,cordova,bossbolo</keywords>
+    <engines>
+        <engine name="cordova" version=">=3.0.0" />
+    </engines>
+
+    <js-module src="www/BoloMediaCapture.js" name="BoloMediaCapture">
+        <clobbers target="window.BoloMediaCapture" />
+    </js-module>
+    
+    <!-- android -->
+    <platform name="android">
+        <!-- 导入信鸽插件 -->
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <activity android:name="com.phonegap.bossbolo.plugin.mediacapture.RectCameraActivity"
+                android:label="@string/activity_name"
+                android:stateNotNeeded="true">
+            </activity>
+        </config-file>
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+            <uses-permission android:name="android.permission.INTERNET" />
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+            <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+            <uses-permission android:name="android.permission.READ_CONTACTS" />
+            <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+            <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+            <!-- 振动权限 -->
+            <uses-permission android:name="android.permission.VIBRATE"/>
+            <!-- 照相机权限 -->
+            <uses-permission android:name="android.permission.CAMERA" />
+            <!-- 屏幕旋转权限 -->
+            <uses-permission android:name="android.permission.CHANGE_CONFIGURATION"/>
+            <uses-feature android:name="android.hardware.camera" />
+            <uses-feature android:name="android.hardware.camera.autofocus" android:required="true" />
+            <!-- 在SDCard中创建与删除文件权限 -->
+            <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+            <!-- 往SDCard写入数据权限 -->
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+            <!-- 开启闪光灯权限 -->
+            <uses-permission android:name="android.permission.FLASHLIGHT" />
+        </config-file>
+
+		<source-file src="src/android/BoloMediaCapture.java" target-dir="src/com/phonegap/bossbolo/plugin/mediacapture" />
+        <source-file src="src/android/CameraHelper.java" target-dir="src/com/phonegap/bossbolo/plugin/mediacapture" />
+        <source-file src="src/android/FakeR.java" target-dir="src/com/phonegap/bossbolo/plugin/mediacapture" />
+        <source-file src="src/android/MaskSurfaceView.java" target-dir="src/com/phonegap/bossbolo/plugin/mediacapture" />
+        <source-file src="src/android/OnCaptureCallback.java" target-dir="src/com/phonegap/bossbolo/plugin/mediacapture" />
+        <source-file src="src/android/RectCameraActivity.java" target-dir="src/com/phonegap/bossbolo/plugin/mediacapture" />
+        
+        
+        <source-file src="src/android/libs/android-support-v4.jar" target-dir="libs" />
+        
+        
+        <source-file src="src/android/res/drawable/bolo_camera_btn_finish.png" target-dir="res/drawable" />
+		<source-file src="src/android/res/layout/activity_rect_camera.xml" target-dir="res/layout" />
+        <source-file src="src/android/res/raw/beep.ogg" target-dir="res/raw" />
+        <source-file src="src/android/res/value/bolo_media_strings.xml" target-dir="res/value" />
+    </platform>
+
+</plugin>

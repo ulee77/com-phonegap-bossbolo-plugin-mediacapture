@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="bolo_camera_msg_default_status">请将奖区放到方框中进行扫描。</string>
+    <string name="bolo_camera_btn_capture_name">拍照</string>
+    <string name="bolo_camera_btn_recapture_name">重拍</string>
+    <string name="bolo_camera_btn_ok_name">确认</string>
+    <string name="bolo_camera_btn_cancel_name">取消</string>
+</resources>
